@@ -4,7 +4,7 @@ Dram tester for 4116 and 4164/256
 Simple project taken from the base of @FozzTexx
 with added support for 4116 memories and a status display.
 
-![alt text](https://github.com/zeus074/dramtester/blob/1/IMG_6060.jpg?raw=true)
+![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/IMG_6060.jpg)
 
 Components:
 C1,C4,C5,C6,C7: 100nF
