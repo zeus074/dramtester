@@ -13,15 +13,20 @@ C2: 10uF 25v
 C3: 47uf 25v
 D1: 1n4148
 DC: MT3608 (DC-DC converter)
-Disp: Dsplay oled 128x32 i2c
-H1,H2,H3: Header-Male 2.54x3
+Disp: Display oled 128x32 i2c
+H1,H2,H3: 3 pin Header-Male 2.54
 R1-R13: 47Ohm 1/8w
 R14,R16: 10kohm 1/4w
 R15: 2.2kohm 1/4w
 1x Arduino Nano
-1x Zif 16 pin
+1x Zif 16 pin (or 16 pin socket)
 1x 7760 (7660s)
 1x tactile switch 6x6
+
+**Directory**
+Gerber : File for make the PCB
+IMG : Tester's pictures
+Firmware : Firmware for Arduino Nano (you can use avr commands like Arduino's IDE or an AVR programmer to write the HEX file)
 
 **How it works**
 First you need to flash the firmware on arduino of course!.
