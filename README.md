@@ -21,7 +21,7 @@ R15: 2.2kohm 1/4w
 1x Arduino Nano
 1x Zif 16 pin
 1x 7760 (7660s)
-1x tactivel switch 6x6
+1x tactile switch 6x6
 
 **How it works**
 First you need to flash the firmware on arduino of course!.
