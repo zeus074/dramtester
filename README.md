@@ -43,4 +43,4 @@ After the test the result will be displayed, if there is an error the test will 
 
 **How to burn the firmware**
 You can use avrdude integrated on arduini via command line, or simply download a gui (if you use windows) like AVRDUDESS.
-![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/programming.jpg)
+![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/programming.JPG)
