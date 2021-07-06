@@ -1,9 +1,9 @@
-# dramtester
-Dram tester for 4116 and 4164/256
+# dramtester V 4.2
+Dram tester for 4116 and 4164/256 (now in beta testing for 4532)
 
 Simple project taken from the base of @FozzTexx
 with added support for 4116 memories and a status display.
-This Tester supports 4164,41256,4116 and pin compatible Dram. 
+This Tester supports 4164,41256,4116,*4532* and pin compatible Dram. 
 
 ![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/IMG_6060.jpg)
 
@@ -31,12 +31,16 @@ Firmware : Firmware for Arduino Nano (you can use avr commands like Arduino's ID
 **How it works**
 First you need to flash the firmware on arduino of course!.
 Before inserting the ram select the correct setting with the jumpers:
-4116  4164-256
+4116  4164-256 - (beta testing : 32k Low - 32k High)
 ...   ***
 ***   ***
 ***   ...
 
-If the setting is on 4164-256 it is possible to select the type of memory by briefly pressing the select / start key.
+If the setting is on 4164-256 it is possible to select the type of memory (from 4164,41256,4532-L,4532-H) by briefly pressing the select / start key.
 To start the test, keep the select / start key pressed for 1 sec.
 memory 4116 has no selections.
 After the test the result will be displayed, if there is an error the test will stop and the point of the error will be shown.
+
+**How to burn the firmware**
+You can use avrdude integrated on arduini via command line, or simply download a gui (if you use windows) like AVRDUDESS.
+![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/programming.jpg)
