@@ -32,11 +32,12 @@ Firmware : Firmware for Arduino Nano (you can use avr commands like Arduino's ID
 
 **How it works**
 First you need to flash the firmware on arduino of course!.
-Before inserting the ram select the correct setting with the jumpers:
-4116  4164-256 - (beta testing : 32k Low - 32k High)
-...   ***
-***   ***
-***   ...
+Before inserting the ram select the correct setting with the jumpers: (all jumpers must be in the same position, all high for 4164 or all low for 4116)
+LOW JP  High JP
+4116    4164-256 - (and testing : 32k Low ram - 32k High ram)
+. . .   * * *
+* * *   * * *
+* * *   . . .
 
 If the setting is on 4164-256 it is possible to select the type of memory (from 4164,41256,4532-L,4532-H) by briefly pressing the select / start key.
 To start the test, keep the select / start key pressed for 1 sec.
@@ -46,3 +47,9 @@ After the test the result will be displayed, if there is an error the test will 
 **How to burn the firmware**
 You can use avrdude integrated on arduini via command line, or simply download a gui (if you use windows) like AVRDUDESS.
 ![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/programming.JPG)
+
+**Support 3D Print**
+Thanks to seanch80, you can print the base in 3D, the stl file is in the 3D_print folder.
+![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/base_3D.jpg)
+You will also find a "3jumpers" file to be able to glue the 3 jumpers in order to easily move them all together.
+![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/3jumpers.jpg)
