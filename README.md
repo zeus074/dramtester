@@ -7,6 +7,8 @@ This Tester supports 4164,41256,4116,*4532* and pin compatible Dram.
 
 ![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/IMG_6060.jpg)
 
+:coffee: if you want the PCB, please support me and follow this link : <a href="https://www.pcbway.com/project/shareproject/Dram_tester_for_4116_4164_256_and_4532_d6b7143c.html" target="_NEW">PCBWAY!</a>
+
 **Components:**
 
 C1,C4,C5,C6,C7: 100nF
