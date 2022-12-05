@@ -41,19 +41,24 @@ R15: 2.2k Ω 1/4w
 
 N.B.: The DC-DC must be able to accept 4V on input and must be set to output 12V
 
+
 **Directory**
-Gerber : File for make the PCB
+
+Gerber : https://www.pcbway.com/project/shareproject/Dram_tester_for_4116_4164_256_and_4532_d6b7143c.html
+
 IMG : Tester's pictures
+
 Firmware : Firmware for Arduino Nano (you can use avr commands like Arduino's IDE or an AVR programmer to write the HEX file)
 
+
 **How it works**
+
 First you need to flash the firmware on arduino of course!.
 Before inserting the ram select the correct setting with the jumpers: (all jumpers must be in the same position, all high for 4164 or all low for 4116)
 LOW JP  High JP
-4116    4164-256 - (and testing : 32k Low ram - 32k High ram)
-. . .   * * *
-* * *   * * *
-* * *   . . .
+
+![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/jumper_positions.jpg)
+
 
 If the setting is on 4164-256 it is possible to select the type of memory (from 4164,41256,4532-L,4532-H) by briefly pressing the select / start key.
 To start the test, keep the select / start key pressed for 1 sec.
@@ -61,11 +66,14 @@ memory 4116 has no selections.
 After the test the result will be displayed, if there is an error the test will stop and the point of the error will be shown.
 
 **How to burn the firmware**
+
 You can use avrdude integrated on arduini via command line, or simply download a gui (if you use windows) like AVRDUDESS.
 ![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/programming.JPG)
 
 **Support 3D Print**
+
 Thanks to seanch80, you can print the base in 3D, the stl file is in the 3D_print folder.
 ![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/base_3D.jpg)
+
 You will also find a "3jumpers" file to be able to glue the 3 jumpers in order to easily move them all together.
 ![alt text](https://github.com/zeus074/dramtester/blob/main/IMG/3jumpers.jpg)
