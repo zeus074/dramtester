@@ -1,5 +1,5 @@
 # Dramtester V 4.2.1 by Mirco Gaggiottini
-Dram tester for 4116 and 4164/256 (now in beta testing for 4532)
+Dram tester for 4116 and 4164/256 (now in beta testing for serial communication)
 
 Simple project taken from the base of @FozzTexx
 
@@ -51,6 +51,10 @@ Gerber : https://www.pcbway.com/project/shareproject/Dram_tester_for_4116_4164_2
 IMG : Tester's pictures
 
 Firmware : Firmware for Arduino Nano (you can use avr commands like Arduino's IDE or an AVR programmer to write the HEX file)
+
+Source : Source file to compile for Arduino
+
+Beta folder (inside firmware/source) : software/firmware with serial communication, without LCD (9600 baud)
 
 
 **How it works**
