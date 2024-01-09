@@ -119,7 +119,6 @@ if (digitalRead(M_TYPE)) {
       if (selector==1 ){
         mode++;
         if (mode > 3) mode=0;
-        EEPROM.write(0, mode);
         setDisp();
       }
     }
@@ -128,7 +127,11 @@ if (digitalRead(M_TYPE)) {
     //else { //long press start
       isError=false;
       ntest=0;
-      if (selector>0) startTest();
+      if (selector>0) {
+        if (EEPROM.read(0) != mode)
+          EEPROM.write(0, mode);
+        startTest();
+      }
   }
    
    delay(100);
