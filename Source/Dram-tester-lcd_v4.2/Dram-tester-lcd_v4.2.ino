@@ -128,8 +128,7 @@ if (digitalRead(M_TYPE)) {
       isError=false;
       ntest=0;
       if (selector>0) {
-        if (EEPROM.read(0) != mode)
-          EEPROM.write(0, mode);
+        EEPROM.update(0, mode);
         startTest();
       }
   }
