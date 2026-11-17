@@ -1,4 +1,4 @@
-void getserial()
+void getserial() //not used
 {
    if(Serial.available()) {
     char data_rcvd = Serial.read();   // read one byte from serial buffer and save to data_rcvd
@@ -24,9 +24,9 @@ void  initDram()
   
 }
 
-void setBus(unsigned int a) {
+void setBus(unsigned int a) { //set output data on bus
   int i;
-  for (i = 0; i < bus_size; i++) { //cambiato con bus_size piccolo
+  for (i = 0; i < bus_size; i++) {
     if (bitRead(a, i)==1) {
       digitalWrite(a_bus[i], HIGH);
     } else {
@@ -72,7 +72,7 @@ int readAddress(unsigned int r, unsigned int c) {
   return ret;
 }
 
-void error(int r, int c)
+void error(int r, int c) //we got an error
 {
   unsigned long a = ((unsigned long)c << bus_size) + r;
   String mhex = String(a,HEX);
@@ -93,20 +93,20 @@ void error(int r, int c)
 }
 
 
-void animate(int v) {
+void animate(int v) { //animation on lcd,but it's take some time.. let put it off.
   /*interrupts();
   if (v==1){u8g2.drawStr(110,32,"\\");} else {u8g2.drawStr(110,32,"/");}
   u8g2.sendBuffer();
   noInterrupts();*/
 }
 
-void fill(int v, bool rd) {
+void fill(int v, bool rd) { //fill dram with same value
   int r, c, g = 0;
   int nocol = 0;
   if (mode>1) nocol=1;
   //v %= 1;
   for (c = 0; c < (1<<bus_size-nocol); c++) {
-    if (rd) animate(g? HIGH : LOW); //animazione
+    if (rd) animate(g? HIGH : LOW); //animation
     for (r = 0; r < (1<<bus_size); r++) {
       writeAddress(r, c, v);
       if (rd){
@@ -121,13 +121,13 @@ void fill(int v, bool rd) {
   //blink();
 }
 
-void fillx(int v) {
+void fillx(int v) {//fill dram with alternating values
   int r, c, g = 0;
   int nocol = 0;
   if (mode>1) nocol=1;
   v %= 1;
   for (c = 0; c < (1<<bus_size-nocol); c++) {
-    animate(g? HIGH : LOW); //animazione
+    animate(g? HIGH : LOW); //animation
     for (r = 0; r < (1<<bus_size); r++) {
       writeAddress(r, c, v);
         if (v != readAddress(r, c)){
@@ -140,7 +140,7 @@ void fillx(int v) {
   }
 }
 
-void readonly(int v) {
+void readonly(int v) { //only read the values
   int r, c;
   int nocol = 0;
   if (mode>1) nocol=1;
@@ -154,9 +154,18 @@ void readonly(int v) {
   }
 }
 
-byte selchip() {
+byte selchip() { //read jumper position to detect wich dram is
+  /* SEL | 12V or 5V 
+   *     < 10K
+   *     >
+   * A6- |
+   *     > 2K2
+   *     <
+   *     |
+   *GND  _
+  */
      //selezione chip
-    int MREAD = analogRead(M_CHIPSEL); // 0 - 180 - 470 : 0=4164 510=vuoto 1024=4116
+    int MREAD = analogRead(M_CHIPSEL); // 0 - 180 - 470 : 0=4164 510=empty 1024=4116
     //Serial.println(MREAD);
     if (MREAD<10) {//4164
       return 0;
@@ -167,7 +176,7 @@ byte selchip() {
     }
 }
 
-// visualizzazione display
+// Display
 void setDisp() {
    u8g2.clearBuffer(); // clear the internal memory
    u8g2.setFont(u8g2_font_logisoso16_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
